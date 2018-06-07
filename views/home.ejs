@@ -1,0 +1,22 @@
+<% include partials/header %>
+<h1>Home PAge</h1>
+
+<div class="container">
+<ul>
+    <li>
+        <a href="/register">Register</a>
+    </li>
+    <li>
+        <a href="/viewall">View all</a>
+    </li>
+    
+    <% datas.forEach(function(data){ %>
+        <li>
+        <a href="/view/<%= data.ename %>"> <%= data.ename %> </a>
+    </li>
+    <% }); %>
+    
+</ul>
+</div>
+
+<% include partials/footer %>

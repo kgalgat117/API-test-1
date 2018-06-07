@@ -1,0 +1,15 @@
+<% include partials/header %>
+<h1> View Page </h1>
+
+<div class="container">
+
+<% datas.forEach(function(data){ %>
+    Event Name : <h3><%= data.ename %></h3>
+    Organiser Name: <h3><%= data.oname %></h3>
+    Location: <h3><%= data.location %></h3>
+    Date: <h3><%= data.date %></h3>
+        <% }); %>
+
+</div>
+
+<% include partials/footer %>
