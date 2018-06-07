@@ -32,9 +32,35 @@ app.get('/view/:name', function (req, res) {
         if (err) {
             console.log(err)
         } else {
-            res.render('view', {
-                datas: datas
+            var ename = "";
+            var oname = "";
+            var location = "";
+            var date = "";
+            datas.forEach(function(dat){
+                ename = dat.ename;
+                oname = dat.oname;
+                location = dat.location;
+                datee = dat.date;
             });
+            res.json( {
+                ename: ename,
+                oname: oname,
+                location: location,
+                date: datee,
+            });
+        }
+    })
+});
+
+app.get('/views/:name', function (req, res) {
+    var name = req.params.name;
+    newData.find({
+        ename: name
+    }, function (err, datas) {
+        if (err) {
+            console.log(err)
+        } else {
+            res.render('view', { datas: datas})
         }
     })
 });
